@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\views\\shared\\_createproductpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\views\\shared\\_createproductpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\views\\shared\\_createproductpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\views\\shared\\_createproductpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -46,16 +46,17 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Products.cs",
               "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Models\\Products.cs",
               "RelativeDocumentMoniker": "MVCAjax\\Models\\Products.cs",
               "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Models\\Products.cs",
               "RelativeToolTip": "MVCAjax\\Models\\Products.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAKAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-01T20:40:20.288Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -69,7 +70,7 @@
               "RelativeDocumentMoniker": "MVCAjax\\Controllers\\ProductsController.cs",
               "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "MVCAjax\\Controllers\\ProductsController.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAIwA8AAAAWAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAowCkAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-02T00:07:57.119Z",
               "EditorCaption": ""
@@ -82,13 +83,14 @@
               "RelativeDocumentMoniker": "MVCAjax\\Views\\Products\\Index.cshtml",
               "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Views\\Products\\Index.cshtml",
               "RelativeToolTip": "MVCAjax\\Views\\Products\\Index.cshtml",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAADAAAAAXAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAkwD0AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-02T00:13:48.596Z"
+              "WhenOpened": "2024-09-02T00:13:48.596Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "_CreateProductPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Views\\Shared\\_CreateProductPartial.cshtml",
               "RelativeDocumentMoniker": "MVCAjax\\Views\\Shared\\_CreateProductPartial.cshtml",

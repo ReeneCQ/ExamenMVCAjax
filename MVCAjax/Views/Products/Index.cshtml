@@ -59,7 +59,7 @@
 
             $.ajax({
                 type: "GET",
-                url: "/Products/GetProducts",
+                url: "/Products/GetProducts?filter=" + filterParameter,
                 success: function (products) {
                     var tableBody = $('table tbody');
                     tableBody.empty(); // Vaciar la tabla

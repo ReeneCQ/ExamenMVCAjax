@@ -38,10 +38,25 @@ namespace MVCAjax.Controllers
             return Json(new { message = "Producto registrado con éxito." });
         }
 
+        //[HttpGet] // Decorador para manejar solicitudes GET
+        //public IActionResult GetProducts()
+        //{
+        //    var products = _context.Productos.ToList();
+        //    return Json(products);
+        //}
+
         [HttpGet] // Decorador para manejar solicitudes GET
-        public IActionResult GetProducts()
+        public IActionResult GetProducts(string filter)
         {
-            var products = _context.Productos.ToList();
+            IQueryable<Products> query = _context.Productos;
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                query = query.Where(p => p.Name.Contains(filter));
+            }
+
+            var products = query.ToList();
+
             return Json(products);
         }
     }
