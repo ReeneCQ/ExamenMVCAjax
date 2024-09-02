@@ -19,7 +19,21 @@ namespace MVCAjax.Controllers
             return View();
         }
 
-        // Acción para abrir el modal de crear Producto
+        [HttpGet]
+        public IActionResult GetProducts(string filter)
+        {
+            IQueryable<Products> query = _context.Productos.Where(p => p.IsActive);
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                query = query.Where(p => p.Name.Contains(filter));
+            }
+
+            var products = query.ToList();
+            return Json(products);
+        }
+
+        [HttpGet]
         public IActionResult CreateProduct()
         {
             return PartialView("_CreateProductPartial");
@@ -42,30 +56,14 @@ namespace MVCAjax.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetProducts(string filter)
-        {
-            IQueryable<Products> query = _context.Productos.Where(p => p.IsActive);
-
-            if (!string.IsNullOrEmpty(filter))
-            {
-                query = query.Where(p => p.Name.Contains(filter));
-            }
-
-            var products = query.ToList();
-            return Json(products);
-        }
-
-        // Acción para abrir el modal de editar Producto
-        [HttpGet]
         public IActionResult EditProduct(int id)
         {
             var product = _context.Productos.Find(id);
-            if (product == null || !product.IsActive) // Verificar que el producto existe y está activo
+            if (product == null || !product.IsActive)
             {
                 return NotFound();
             }
 
-            // Pasar datos del producto a la vista parcial usando ViewBag
             ViewBag.ProductId = product.ProductId;
             ViewBag.Name = product.Name;
             ViewBag.Price = product.Price;
@@ -74,7 +72,6 @@ namespace MVCAjax.Controllers
             return PartialView("_UpdateProductPartial");
         }
 
-        // Acción para actualizar el producto
         [HttpPost]
         public async Task<IActionResult> UpdateProduct(int productId, string name, int price, string fechaVencimiento)
         {
@@ -84,7 +81,6 @@ namespace MVCAjax.Controllers
                 return Json(new { message = "Producto no encontrado o inactivo." });
             }
 
-            // Actualizar propiedades del producto
             product.Name = name;
             product.Price = price;
             product.FechaVencimiento = fechaVencimiento;
@@ -95,7 +91,6 @@ namespace MVCAjax.Controllers
             return Json(new { message = "Producto actualizado con éxito." });
         }
 
-        // Acción para eliminar un producto (eliminación lógica)
         [HttpPost]
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -105,7 +100,6 @@ namespace MVCAjax.Controllers
                 return Json(new { message = "Producto no encontrado o ya ha sido eliminado." });
             }
 
-            // Marcar el producto como inactivo en lugar de eliminarlo físicamente
             product.IsActive = false;
             _context.Entry(product).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             await _context.SaveChangesAsync();

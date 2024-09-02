@@ -4,7 +4,7 @@
 
 <h2>Lista de Productos</h2>
 
-<input type="text" id="txtFilter" />
+<input type="text" id="txtFilter" placeholder="Filtrar por nombre" />
 <button id="listProductsButton" class="btn btn-primary">Listar Productos</button>
 
 <table class="table">
@@ -63,44 +63,45 @@
 
 <script>
     $(document).ready(function () {
-        loadProducts();
+        loadProducts(); // Cargar productos al inicio
 
         $('#listProductsButton').click(function () {
-            loadProducts();
+            loadProducts(); // Cargar productos con el filtro
         });
 
         function loadProducts() {
-            var filterParameter = $('#txtFilter').val();
+            var filterParameter = $('#txtFilter').val(); // Obtener el valor del filtro
 
             $.ajax({
                 type: "GET",
-                url: "/Products/GetProducts",
-                data: { filter: filterParameter },
+                url: "/Products/GetProducts?filter=" + filterParameter, // URL con filtro
                 success: function (products) {
                     var tableBody = $('table tbody');
                     tableBody.empty(); // Vaciar la tabla
 
+                    // Crear filas para cada producto
                     products.forEach(function (product) {
                         var newRow = `
-                                    <tr>
-                                        <td>${product.productId}</td>
-                                        <td>${product.name}</td>
-                                        <td>${product.price}</td>
-                                        <td>${product.fechaVencimiento}</td>
-                                        <td>
-                                            <button class="btn btn-warning btn-sm editProductButton" data-id="${product.productId}">Editar</button>
-                                            <button class="btn btn-danger btn-sm deleteProductButton" data-id="${product.productId}">Eliminar</button>
-                                        </td>
-                                    </tr>`;
-                        tableBody.append(newRow);
+                                <tr>
+                                    <td>${product.productId}</td>
+                                    <td>${product.name}</td>
+                                    <td>${product.price}</td>
+                                    <td>${product.fechaVencimiento}</td>
+                                    <td>
+                                        <button class="btn btn-warning btn-sm editProductButton" data-id="${product.productId}">Editar</button>
+                                        <button class="btn btn-danger btn-sm deleteProductButton" data-id="${product.productId}">Eliminar</button>
+                                    </td>
+                                </tr>`;
+                        tableBody.append(newRow); // Añadir la fila a la tabla
                     });
                 },
                 error: function () {
-                    alert('Hubo un error al listar los productos.');
+                    alert('Hubo un error al listar los productos.'); // Mensaje de error si falla la solicitud
                 }
             });
         }
 
+        // Manejar clic en el botón de crear producto
         $('#createProductButton').click(function () {
             $.ajax({
                 type: "GET",
@@ -115,6 +116,7 @@
             });
         });
 
+        // Manejar clic en los botones de editar
         $('table').on('click', '.editProductButton', function () {
             var productId = $(this).data('id');
 
@@ -132,6 +134,7 @@
             });
         });
 
+        // Manejar clic en los botones de eliminar
         $('table').on('click', '.deleteProductButton', function () {
             var productId = $(this).data('id');
 
