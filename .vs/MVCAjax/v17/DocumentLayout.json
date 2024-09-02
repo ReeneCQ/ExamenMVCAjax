@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\views\\shared\\_createproductpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\views\\shared\\_createproductpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Migrations\\20240902012848_Base de datos Products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MVCAjax\\Migrations\\20240902012848_Base de datos Products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Migrations\\20240902011909_Base de datos Products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MVCAjax\\Migrations\\20240902011909_Base de datos Products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|c:\\users\\reene\\source\\repos\\mvcajax\\mvcajax\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A8EBE90-A9BB-4F67-8346-D70D8F4440B9}|MVCAjax\\MVCAjax.csproj|solutionrelative:mvcajax\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Models\\Products.cs",
+              "RelativeDocumentMoniker": "MVCAjax\\Models\\Products.cs",
+              "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Models\\Products.cs",
+              "RelativeToolTip": "MVCAjax\\Models\\Products.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T20:40:20.288Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "MVCAjax\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "MVCAjax\\Controllers\\ProductsController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAIwA8AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T00:07:57.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVCAjax\\Views\\Products\\Index.cshtml",
+              "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "MVCAjax\\Views\\Products\\Index.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-02T00:13:48.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_CreateProductPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Views\\Shared\\_CreateProductPartial.cshtml",
+              "RelativeDocumentMoniker": "MVCAjax\\Views\\Shared\\_CreateProductPartial.cshtml",
+              "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Views\\Shared\\_CreateProductPartial.cshtml",
+              "RelativeToolTip": "MVCAjax\\Views\\Shared\\_CreateProductPartial.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAvwBUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-02T00:42:13.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\appsettings.json",
+              "RelativeDocumentMoniker": "MVCAjax\\appsettings.json",
+              "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\appsettings.json",
+              "RelativeToolTip": "MVCAjax\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-01T04:39:17.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20240902011909_Base de datos Products.cs",
+              "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Migrations\\20240902011909_Base de datos Products.cs",
+              "RelativeDocumentMoniker": "MVCAjax\\Migrations\\20240902011909_Base de datos Products.cs",
+              "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Migrations\\20240902011909_Base de datos Products.cs",
+              "RelativeToolTip": "MVCAjax\\Migrations\\20240902011909_Base de datos Products.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T01:19:09.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20240902012848_Base de datos Products.cs",
+              "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Migrations\\20240902012848_Base de datos Products.cs",
+              "RelativeDocumentMoniker": "MVCAjax\\Migrations\\20240902012848_Base de datos Products.cs",
+              "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Migrations\\20240902012848_Base de datos Products.cs",
+              "RelativeToolTip": "MVCAjax\\Migrations\\20240902012848_Base de datos Products.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T01:28:48.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Program.cs",
+              "RelativeDocumentMoniker": "MVCAjax\\Program.cs",
+              "ToolTip": "C:\\Users\\REENE\\source\\repos\\MVCAjax\\MVCAjax\\Program.cs",
+              "RelativeToolTip": "MVCAjax\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T04:39:50.249Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+﻿<div>
+    <form id="createProductForm">
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="price">Precio:</label>
+            <input type="text" id="price" name="price" class="form-control" />
+        </div>
+        <button type="button" id="submitProductButton" class="btn btn-success">Guardar</button>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#submitProductButton').click(function () {
+            var name = $('#name').val();
+            var price = $('#price').val();
+
+            $.ajax({
+                type: "POST",
+                url: "/Products/SubmitForm",
+                data: {
+                    name: name,
+                    price: price
+                },
+                success: function (response) {
+                    alert(response.message);
+                    $('#createProductModal').modal('hide');
+
+                    //location.reload(); // Recargar la página para ver la lista actualizada
+                },
+                error: function () {
+                    alert('Hubo un error al crear el producto.');
+                }
+            });
+        });
+    });
+</script>

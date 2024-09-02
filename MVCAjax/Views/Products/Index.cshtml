@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Lista de Productos";
+}
+
+<h2>Lista de Productos</h2>
+
+<input type="text" id="txtFilter" />
+<button id="listProductsButton" class="btn btn-primary">Listar Productos</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Fecha de Vencimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se llenará la tabla con los productos -->
+    </tbody>
+</table>
+
+<button id="createProductButton" class="btn btn-success">Crear Producto</button>
+
+<!-- Modal para crear producto -->
+<div class="modal fade" id="createProductModal" tabindex="-1" role="dialog" aria-labelledby="createProductLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createProductLabel">Crear Producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        loadProducts();
+
+        $('#listProductsButton').click(function () {
+
+            loadProducts();
+
+        });
+        function loadProducts() {
+
+            var filterParameter = $('#txtFilter').val();
+
+            $.ajax({
+                type: "GET",
+                url: "/Products/GetProducts",
+                success: function (products) {
+                    var tableBody = $('table tbody');
+                    tableBody.empty(); // Vaciar la tabla
+
+                    products.forEach(function (products) {
+                        var newRow = `
+                                    <tr>
+                                        <td>${products.productId}</td>
+                                        <td>${products.name}</td>
+                                        <td>${products.price}</td>
+                                        <td>${products.fechaVencimiento}</td>
+                                    </tr>`;
+                        tableBody.append(newRow);
+                    });
+                },
+                error: function () {
+                    alert('Hubo un error al listar los pruductos.');
+                }
+            });
+        }
+
+        // Cargar el contenido del modal para crear Producto
+        $('#createProductButton').click(function () {
+
+            //Si quiero mostrar sin usar la vista parcial
+            // $('#createProductModal').modal('show');
+            $.ajax({
+                type: "GET",
+                url: "/Products/CreateProduct",
+                success: function (response) {
+                    $('.modal-body').html(response);
+                    $('#createProductModal').modal('show');
+                },
+                error: function () {
+                    alert('Hubo un error al cargar el formulario.');
+                }
+            });
+        });
+
+        // Listar Productos y actualizar la tabla
+        // $('#listProductsButton').click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/Products/GetProducts",
+        //         success: function (products) {
+        //             var tableBody = $('table tbody');
+        //             tableBody.empty(); // Vaciar la tabla
+
+        //             products.forEach(function (products) {
+        //                 var newRow = `
+        //                         <tr>
+        //                             <td>${products.productId}</td>
+        //                             <td>${products.name}</td>
+        //                             <td>${products.price}</td>
+        //                             <td>${products.fechaVencimiento}</td>
+        //                         </tr>`;
+        //                 tableBody.append(newRow);
+        //             });
+        //         },
+        //         error: function () {
+        //             alert('Hubo un error al listar los pruductos.');
+        //         }
+        //     });
+        // });
+
+        
+        
+    });
+</script>
