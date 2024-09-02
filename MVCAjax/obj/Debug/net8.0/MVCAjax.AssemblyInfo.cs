@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MVCAjax")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9d669156de186a621c2d96eea88ba9847cfc5ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("MVCAjax")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MVCAjax")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

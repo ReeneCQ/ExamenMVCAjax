@@ -11,6 +11,9 @@ namespace MVCAjax.Models
         //public DateTime FechaVencimiento { get; set; }
         public string FechaVencimiento { get; set; }
 
+        // Propiedad para la eliminación lógica
+        public bool IsActive { get; set; } = true;
+
 
     }
 }

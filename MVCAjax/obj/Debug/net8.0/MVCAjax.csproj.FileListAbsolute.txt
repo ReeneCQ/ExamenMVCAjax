@@ -554,3 +554,4 @@ C:\Users\REENE\source\repos\MVCAjax\MVCAjax\obj\Debug\net8.0\refint\MVCAjax.dll
 C:\Users\REENE\source\repos\MVCAjax\MVCAjax\obj\Debug\net8.0\MVCAjax.pdb
 C:\Users\REENE\source\repos\MVCAjax\MVCAjax\obj\Debug\net8.0\MVCAjax.genruntimeconfig.cache
 C:\Users\REENE\source\repos\MVCAjax\MVCAjax\obj\Debug\net8.0\ref\MVCAjax.dll
+C:\Users\REENE\source\repos\MVCAjax\MVCAjax\obj\Debug\net8.0\MVCAjax.sourcelink.json

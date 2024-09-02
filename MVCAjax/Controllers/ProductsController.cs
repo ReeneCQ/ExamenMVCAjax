@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCAjax.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MVCAjax.Controllers
 {
@@ -11,6 +13,7 @@ namespace MVCAjax.Controllers
         {
             _context = context;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -38,17 +41,10 @@ namespace MVCAjax.Controllers
             return Json(new { message = "Producto registrado con éxito." });
         }
 
-        //[HttpGet] // Decorador para manejar solicitudes GET
-        //public IActionResult GetProducts()
-        //{
-        //    var products = _context.Productos.ToList();
-        //    return Json(products);
-        //}
-
-        [HttpGet] // Decorador para manejar solicitudes GET
+        [HttpGet]
         public IActionResult GetProducts(string filter)
         {
-            IQueryable<Products> query = _context.Productos;
+            IQueryable<Products> query = _context.Productos.Where(p => p.IsActive);
 
             if (!string.IsNullOrEmpty(filter))
             {
@@ -56,8 +52,65 @@ namespace MVCAjax.Controllers
             }
 
             var products = query.ToList();
-
             return Json(products);
+        }
+
+        // Acción para abrir el modal de editar Producto
+        [HttpGet]
+        public IActionResult EditProduct(int id)
+        {
+            var product = _context.Productos.Find(id);
+            if (product == null || !product.IsActive) // Verificar que el producto existe y está activo
+            {
+                return NotFound();
+            }
+
+            // Pasar datos del producto a la vista parcial usando ViewBag
+            ViewBag.ProductId = product.ProductId;
+            ViewBag.Name = product.Name;
+            ViewBag.Price = product.Price;
+            ViewBag.FechaVencimiento = product.FechaVencimiento;
+
+            return PartialView("_UpdateProductPartial");
+        }
+
+        // Acción para actualizar el producto
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(int productId, string name, int price, string fechaVencimiento)
+        {
+            var product = await _context.Productos.FindAsync(productId);
+            if (product == null || !product.IsActive)
+            {
+                return Json(new { message = "Producto no encontrado o inactivo." });
+            }
+
+            // Actualizar propiedades del producto
+            product.Name = name;
+            product.Price = price;
+            product.FechaVencimiento = fechaVencimiento;
+
+            _context.Entry(product).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return Json(new { message = "Producto actualizado con éxito." });
+        }
+
+        // Acción para eliminar un producto (eliminación lógica)
+        [HttpPost]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = _context.Productos.Find(id);
+            if (product == null || !product.IsActive)
+            {
+                return Json(new { message = "Producto no encontrado o ya ha sido eliminado." });
+            }
+
+            // Marcar el producto como inactivo en lugar de eliminarlo físicamente
+            product.IsActive = false;
+            _context.Entry(product).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return Json(new { message = "Producto eliminado con éxito." });
         }
     }
 }

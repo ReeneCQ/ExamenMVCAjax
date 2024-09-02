@@ -14,6 +14,7 @@
             <th>Nombre</th>
             <th>Precio</th>
             <th>Fecha de Vencimiento</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -34,7 +35,24 @@
                 </button>
             </div>
             <div class="modal-body">
+                <!-- Contenido cargado dinámicamente -->
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Modal para editar producto -->
+<div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="editProductLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProductLabel">Editar Producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido cargado dinámicamente -->
             </div>
         </div>
     </div>
@@ -45,47 +63,45 @@
 
 <script>
     $(document).ready(function () {
-
         loadProducts();
 
         $('#listProductsButton').click(function () {
-
             loadProducts();
-
         });
-        function loadProducts() {
 
+        function loadProducts() {
             var filterParameter = $('#txtFilter').val();
 
             $.ajax({
                 type: "GET",
-                url: "/Products/GetProducts?filter=" + filterParameter,
+                url: "/Products/GetProducts",
+                data: { filter: filterParameter },
                 success: function (products) {
                     var tableBody = $('table tbody');
                     tableBody.empty(); // Vaciar la tabla
 
-                    products.forEach(function (products) {
+                    products.forEach(function (product) {
                         var newRow = `
                                     <tr>
-                                        <td>${products.productId}</td>
-                                        <td>${products.name}</td>
-                                        <td>${products.price}</td>
-                                        <td>${products.fechaVencimiento}</td>
+                                        <td>${product.productId}</td>
+                                        <td>${product.name}</td>
+                                        <td>${product.price}</td>
+                                        <td>${product.fechaVencimiento}</td>
+                                        <td>
+                                            <button class="btn btn-warning btn-sm editProductButton" data-id="${product.productId}">Editar</button>
+                                            <button class="btn btn-danger btn-sm deleteProductButton" data-id="${product.productId}">Eliminar</button>
+                                        </td>
                                     </tr>`;
                         tableBody.append(newRow);
                     });
                 },
                 error: function () {
-                    alert('Hubo un error al listar los pruductos.');
+                    alert('Hubo un error al listar los productos.');
                 }
             });
         }
 
-        // Cargar el contenido del modal para crear Producto
         $('#createProductButton').click(function () {
-
-            //Si quiero mostrar sin usar la vista parcial
-            // $('#createProductModal').modal('show');
             $.ajax({
                 type: "GET",
                 url: "/Products/CreateProduct",
@@ -99,33 +115,40 @@
             });
         });
 
-        // Listar Productos y actualizar la tabla
-        // $('#listProductsButton').click(function () {
-        //     $.ajax({
-        //         type: "GET",
-        //         url: "/Products/GetProducts",
-        //         success: function (products) {
-        //             var tableBody = $('table tbody');
-        //             tableBody.empty(); // Vaciar la tabla
+        $('table').on('click', '.editProductButton', function () {
+            var productId = $(this).data('id');
 
-        //             products.forEach(function (products) {
-        //                 var newRow = `
-        //                         <tr>
-        //                             <td>${products.productId}</td>
-        //                             <td>${products.name}</td>
-        //                             <td>${products.price}</td>
-        //                             <td>${products.fechaVencimiento}</td>
-        //                         </tr>`;
-        //                 tableBody.append(newRow);
-        //             });
-        //         },
-        //         error: function () {
-        //             alert('Hubo un error al listar los pruductos.');
-        //         }
-        //     });
-        // });
+            $.ajax({
+                type: "GET",
+                url: "/Products/EditProduct",
+                data: { id: productId },
+                success: function (response) {
+                    $('.modal-body').html(response);
+                    $('#editProductModal').modal('show');
+                },
+                error: function () {
+                    alert('Hubo un error al cargar el formulario de edición.');
+                }
+            });
+        });
 
-        
-        
+        $('table').on('click', '.deleteProductButton', function () {
+            var productId = $(this).data('id');
+
+            if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Products/DeleteProduct",
+                    data: { id: productId },
+                    success: function (response) {
+                        alert(response.message);
+                        loadProducts(); // Recargar la lista de productos
+                    },
+                    error: function () {
+                        alert('Hubo un error al eliminar el producto.');
+                    }
+                });
+            }
+        });
     });
 </script>
